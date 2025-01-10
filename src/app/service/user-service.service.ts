@@ -8,7 +8,7 @@ export class UserServiceService {
 private users:UserClass[] = []
   constructor() {
   let user1:UserClass = new UserClass(1,"noe","noe.tipo@gmail.com", true);
-  let user2:UserClass= new UserClass(2,"wilber desde api rest","wilber@gmail.com", true);
+  let user2:UserClass= new UserClass(2,"wilber desde api rest","wilber@gmail.com", false);
   this.users.push(user1);
   this.users.push(user2);
   }

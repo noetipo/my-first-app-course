@@ -5,10 +5,11 @@ import {UserProfileComponent} from './user-profile/user-profile.component';
 import {CommonModule} from '@angular/common';
 import {UserClass} from './models/userClass';
 import {UserServiceService} from './service/user-service.service';
+import {StatusPipe} from './pipe/status.pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,HelloWorldComponent,UserProfileComponent,CommonModule],
+  imports: [RouterOutlet,HelloWorldComponent,UserProfileComponent,CommonModule, StatusPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 
