@@ -43,4 +43,5 @@ export class HelloWorldComponent implements OnInit, AfterViewInit, OnDestroy, On
   console.log("ngOnChanges: ejecuta cuando hay cambios en algun variable");
   }
 
+
 }

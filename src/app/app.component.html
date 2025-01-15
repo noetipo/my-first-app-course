@@ -1,4 +1,4 @@
-<h5>Hola mundo Angular: {{title}} ID: {{user.id}} USER: {{user.name}} EMAIl: {{user.email}} STATE: {{user.isActive}} </h5>
+<!--<h5>Hola mundo Angular: {{title}} ID: {{user.id}} USER: {{user.name}} EMAIl: {{user.email}} STATE: {{user.isActive}} </h5>
 
 <h3>Datos modificados del componente hijo</h3>
 <p>User ID: {{user.id}}</p>
@@ -31,4 +31,76 @@
   </tbody>
 
 
+</table>-->
+
+<!--<form>
+  <div>
+    <label> Nombre</label>
+    <input id="nombre" name="nombre" [(ngModel)]="userClassForm.name" >
+
+  </div>
+  <div>
+    <label> Email</label>
+    <input id="email" name="email" [(ngModel)]="userClassForm.email">
+  </div>
+  <div>
+    <button (click)="enviarFormulario()">Enviar formulario</button>
+  </div>
+
+
+</form>-->
+
+
+<!--<form [formGroup]="userForm">
+  <div>
+    <label> Nombre</label>
+    <input id="name" formControlName="name">
+  </div>
+  <div>
+    <label> Email</label>
+    <input id="email" formControlName="email">
+  </div>
+ <button (click)="rectiveForm()" [disabled]="userForm.invalid"> Formulario reactivo</button>
+</form>
+-->
+
+<table>
+  <thead>
+  <tr>
+    <th>name</th>
+    <th>email</th>
+    <th>phone</th>
+    <th>User Name</th>
+    <th>Company</th>
+    <th>City</th>
+    <th>opcion</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let user of userApiServices">
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.company.name}}</td>
+    <td>{{user.address.city}}</td>
+    <td>
+      <!-- Enlace con routerLink -->
+      <!--<a [routerLink]="['/user-profile', user.id]">Ver Perfil</a>-->
+      <button (click)="viewProfile(user.id)">Ver Perfil</button>
+      <a [routerLink]="['/user-profile']" [queryParams]="{ id: user.id, name: user.name }">Ver Perfil</a>
+      <button (click)="viewProfileObject(user)">Ver Perfil</button>
+    </td>
+  </tr>
+  </tbody>
 </table>
+
+<h1>Bienvenido a mi aplicación</h1>
+<nav>
+  <a routerLink="/hello-world">Hello World</a>
+</nav>
+  <nav>
+  <a routerLink="/user-profile">User Profile</a>
+  </nav>
+<router-outlet></router-outlet>
